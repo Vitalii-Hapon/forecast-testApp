@@ -1,0 +1,36 @@
+mat-toolbar {
+  max-width: var(--maxWidth);
+  margin: 1rem auto;
+  padding: 0 2rem;
+  border-radius: 1rem;
+
+  mat-toolbar-row {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    .mat-display-1 {
+      margin: 0 auto;
+    }
+
+    .mat-button {
+      padding: 0;
+      min-width: 0;
+    }
+  }
+
+  .cityInput {
+    justify-content: center;
+  }
+}
+
+.favorite-cities {
+  display: flex;
+
+  ul {
+    display: flex;
+    list-style: none;
+    overflow: hidden;
+  }
+}
+

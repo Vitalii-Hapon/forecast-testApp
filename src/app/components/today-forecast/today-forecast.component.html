@@ -1,0 +1,54 @@
+<mat-card class="mat-app-background">
+    <mat-card-header>
+      <h2 class="mat-display-2">{{currentCity}}</h2>
+    </mat-card-header>
+
+    <mat-card-title-group>
+      <mat-card-title class="mat-display-1">
+        {{((currentDate + currentTimeOffset) * 1000 + localTimeOffset)| date: 'EEEE, MMMM d, y, HH:mm' }}
+      </mat-card-title>
+
+      <mat-card-title class="mat-headline">
+        {{currentWeather.description}}
+      </mat-card-title>
+    </mat-card-title-group>
+
+    <mat-card-content>
+      <p class="mat-display-4">
+        {{currentTemp.toFixed(0)}}
+        <app-degrees></app-degrees>
+      </p>
+
+      <p class="mat-display-4">
+        <i class="wi wi-owm-{{this.currentWeather.id}}"></i>
+      </p>
+
+      <mat-list>
+        <mat-list-item>
+          <div class="daytime-temp">
+            <p>Morning</p>
+            <p>{{todayWeather.temp.morn.toFixed(0)}}</p></div>
+        </mat-list-item>
+
+        <mat-list-item>
+        <div class="daytime-temp">
+          <p>Day</p>
+          <p>{{todayWeather.temp.day.toFixed(0)}}</p></div>
+      </mat-list-item>
+
+        <mat-list-item>
+          <div class="daytime-temp">
+            <p>Evening</p>
+            <p>{{todayWeather.temp.eve.toFixed(0)}}</p></div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <div class="daytime-temp">
+            <p>Night</p>
+            <p>{{todayWeather.temp.night.toFixed(0)}}</p></div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+</mat-card>
+
+

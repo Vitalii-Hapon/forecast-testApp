@@ -1,0 +1,30 @@
+mat-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-card {
+  .mat-display-2 {
+    margin: 0 auto 16px;
+  }
+
+  .mat-display-1 {
+    margin: 0 0 16px;
+  }
+
+  .mat-display-4 {
+    margin: 0;
+  }
+}
+
+.mat-list {
+  width: 20%;
+
+  .daytime-temp {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+

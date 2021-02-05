@@ -1,0 +1,53 @@
+<mat-toolbar class="mat-app-background">
+  <mat-toolbar-row>
+    <h1 class="mat-display-1">My weather App</h1>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="cityInput">
+    <mat-form-field>
+      <mat-label>Type the city</mat-label>
+
+      <input matInput type="text"
+             [formControl]="cityInput">
+
+      <button mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="clearInput()">
+
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <button mat-button (click)="getCoord()">
+      or <u>get weather by coordinate</u>
+    </button>
+
+    <mat-slide-toggle [formControl]="degreesInput">
+      <app-degrees></app-degrees>
+    </mat-slide-toggle>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="favorite-cities" *ngIf="favoriteCities.length > 0">
+    <p>
+      or select one from your favorites:
+    </p>
+
+    <ul>
+      <li *ngFor="let city of favoriteCities">
+        <button class="mat-button" (click)="selectCity(city.coord)">
+          <u>{{city.name}}</u>
+        </button>
+
+        <button class="mat-button removeCity"
+                mat-icon-button
+                (click)="removeCity(city)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </li>
+    </ul>
+  </mat-toolbar-row>
+</mat-toolbar>

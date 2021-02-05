@@ -1,0 +1,27 @@
+<ng-container *ngIf="weather, else other">
+  <app-today-forecast [todayWeather]="weather.dailyWeather[0]"
+                      [currentCity]="weather.cityName"
+                      [currentDate]="weather.currentTime"
+                      [currentTemp]="weather.currentTemp"
+                      [currentTimeOffset]="weather.timezoneOffset"
+                      [currentWeather]="weather.currentWeather">
+  </app-today-forecast>
+
+  <mat-list>
+    <mat-list-item *ngFor="let dayWeather of weather.dailyWeather | slice : 1">
+      <app-daily-forecast [dayWeather]="dayWeather">
+      </app-daily-forecast>
+    </mat-list-item>
+  </mat-list>
+</ng-container>
+
+<ng-template #other>
+  <div class="spinner-wrapper">
+    <mat-spinner color="warn"></mat-spinner>
+  </div>
+
+  <!--<ng-template #noCity></ng-template>-->
+  <ng-container>
+    <p class="mat-display-1 noCity">No selected city</p>
+  </ng-container>
+</ng-template>

@@ -1,0 +1,10 @@
+<p>{{dayWeather.date | date: 'EEEE'}}</p>
+
+<p class="mat-headline">
+  <i class="wi wi-owm-{{this.dayWeather.weather[0].id}}"></i>
+</p>
+
+<p>
+  {{dayWeather.averageTemp}}
+  <app-degrees></app-degrees>
+</p>
